@@ -5,7 +5,9 @@
     font-family: Raleway;
     color: rgb(73, 73, 73);
 }
-
+.section-header{
+    text-decoration-color:aqua;
+}
 html, body {
     margin: 0;
     padding: 0;

@@ -1,0 +1,19 @@
+name: clone workflow
+on: 
+  workflow_dispatch:   
+jobs:
+  job_one:
+    name: Clone workflow
+    runs-on: ubuntu-latest
+    steps:
+      - name: clone terpconnect directory
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }} 
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port:  ${{ secrets.PORT }}
+          script: |
+              ssh-keyscan -H github.com >> ~${{ secrets.USERNAME }}/.ssh/known_hosts
+              cd ../pub
+              git clone git@github.com:shaikseemaa94/cmsc389T-web-template.git

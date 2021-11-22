@@ -17,3 +17,4 @@ jobs:
              unalias rm
              cd ../pub
              rm -rf cmsc389T-web-template
+             
